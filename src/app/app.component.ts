@@ -19,10 +19,13 @@ export class RealService {
 export class DummyService extends RealService {
   constructor() {
     super();
+    //example of spying on a method
     spyOn(this, 'isReady')
     .and
     .returnValue(Observable.of('yes!'));
 
+
+    //example of spying on a property (with getter)
     spyOnProperty(this, 'isReadyAsProp', 'get')
     .and
     .returnValue(Observable.of('yes!'));

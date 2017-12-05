@@ -1,12 +1,14 @@
 import { TestBed, async } from '@angular/core/testing';
-import { AppComponent, DummyService } from './app.component';
+import { AppComponent, DummyService, RealService } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
-      providers: [DummyService]
+      providers: [
+        {provide: RealService, useClass: DummyService}
+      ]
     }).compileComponents();
   }));
   it('should be able to test async in init', async(() => {
@@ -15,6 +17,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
     app.ngOnInit();
     expect(app.title).toBe('yes!');
+    expect(app.subtitle).toBe('yes!');
   }));
 
 });

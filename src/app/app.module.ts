@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
-import { AppComponent, DummyService } from './app.component';
+import { AppComponent, DummyService, RealService } from './app.component';
 
 
 @NgModule({
@@ -12,7 +12,7 @@ import { AppComponent, DummyService } from './app.component';
   imports: [
     BrowserModule
   ],
-  providers: [DummyService],
+  providers: [RealService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
